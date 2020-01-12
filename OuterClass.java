@@ -1,16 +1,23 @@
 /* Java program to demonstrate how to implement static and non-static
    classes in a java program.
    N.B: Unlike C#, Java doesn't allow outer-most class to be static*/
+import java.time.LocalDateTime;
 public class OuterClass{
    private static String msg = "GeeksForGeeks";
    private String webAddress = "www.geeksforgeeks.org";
+   private static LocalDateTime ldt = LocalDateTime.now();
 
-public void getFunc(){
-	System.out.println("func");
+public static String func(){
+	return "func";
 }
    // Static nested class
    public static class NestedStaticClass{
-		//N.B: unlike in C#, Java doesn't allow static constructors
+		//N.B: unlike in C#, Java doesn't allow static constructors. What's the purpose anyway?
+		//Isn't it constructors are meant for instance object initialisation?
+
+		//Unlike in C#, in Java a static class can have instance variables which can be used by
+		//non static methods
+		public String s = "string";
 
        // Only static members and methods of Outer class are directly accessible in nested
        // static class
@@ -25,6 +32,10 @@ public void getFunc(){
   		//from a static method
          //System.out.println("Sender: " + webAddress);
        }
+
+       public static void printDateAndTime(){
+		   System.out.println("Date and Time: " + ldt);
+	   }
     }
 
     // non-static nested class - also called Inner class

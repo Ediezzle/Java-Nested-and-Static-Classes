@@ -8,6 +8,7 @@ class Main
 
        // call non static method of nested static class
        printer.printMessage();
+       System.out.println(printer.s);
 
        // In order to create instance of Inner class we need an Outer class
        // instance. Let us create Outer class instance for creating
@@ -24,5 +25,14 @@ class Main
 
        // similarly we can now call Inner class method
        innerObject.display();
+
+       InheritedClass.StaticInheritedInnerClass inClass =
+	          		new InheritedClass.StaticInheritedInnerClass();
+       inClass.AnotherExperiment();
+
+       InheritedClass.AnotherStaticInheritedClass ic =
+       		new InheritedClass().new AnotherStaticInheritedClass();
+       ic.SomeMoreExperiment();
+
     }
 }
