@@ -4,7 +4,9 @@ class Main
     public static void main(String args[]){
 
        // create instance of nested Static class
-       OuterClass.NestedStaticClass printer = new OuterClass.NestedStaticClass();
+       //OuterClass.NestedStaticClass printer = new OuterClass.NestedStaticClass();
+       OuterClass oc = new OuterClass();
+       oc.NestedStaticClass printer = oc.new NestedStaticClass();
 
        // call non static method of nested static class
        printer.printMessage();

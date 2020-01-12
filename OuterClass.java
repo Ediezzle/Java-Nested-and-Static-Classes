@@ -1,5 +1,6 @@
 /* Java program to demonstrate how to implement static and non-static
-   classes in a java program. */
+   classes in a java program.
+   N.B: Unlike C#, Java doesn't allow outer-most class to be static*/
 class OuterClass{
    private static String msg = "GeeksForGeeks";
    private String webAddress = "www.geeksforgeeks.org";
@@ -8,7 +9,7 @@ class OuterClass{
    public static class NestedStaticClass{
 		//N.B: unlike in C#, Java doesn't allow static constructors
 
-       // Only static members of Outer class is directly accessible in nested
+       // Only static members and methods of Outer class are directly accessible in nested
        // static class
        public void printMessage() {
 
@@ -25,7 +26,7 @@ class OuterClass{
     // non-static nested class - also called Inner class
     public class InnerClass{
 
-       // Both static and non-static members of Outer class are accessible in
+       // Both static and non-static members and methods of Outer class are accessible in
        // this Inner class
        public void display(){
           System.out.println("Message from non-static nested class: "+ msg);
